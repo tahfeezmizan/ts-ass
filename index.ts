@@ -1,6 +1,5 @@
 function formatString(input: string, toUpper?: boolean): string {
   const result = toUpper !== false ? input.toUpperCase() : input.toLowerCase();
-  console.log(result);
   return result;
 }
 
@@ -18,8 +17,6 @@ function filterByRating(
   if (result < 4) {
     console.log("Less than 4");
   }
-
-  console.log(result);
   return result;
 }
 
@@ -39,7 +36,6 @@ type T = string | number;
 
 function concatenateArrays(...arrays: T[][]): T[] {
   const result = arrays.reduce((acc, array) => acc.concat(array), []);
-  console.log(result);
   return result;
 }
 
@@ -77,8 +73,6 @@ concatenateArrays([9, 8], [3, 4], [5]);
   }
 
   const myCar = new Car("Toyota", 2022, "Camry");
-  console.log(myCar.getInfo());
-  console.log(myCar.getModel());
 }
 
 // ---------------------------
@@ -89,8 +83,8 @@ function processValue(value: string | number): number {
   return result;
 }
 
-// processValue("Programmgin Hero");
-// processValue(10);
+processValue("Programmgin Hero");
+processValue(10);
 
 // ---------------------
 {
@@ -105,7 +99,6 @@ function processValue(value: string | number): number {
     const result = products.reduce((prev, curr) =>
       curr.price > prev.price ? curr : prev
     );
-    console.log(result);
     return result;
   }
 
@@ -135,8 +128,6 @@ function getDayType(day: Day) {
   return day === Day.Saturday || day === Day.Sunday ? "Weekend" : "Weekday";
 }
 
-console.log(getDayType(Day.Monday));
-console.log(getDayType(Day.Sunday));
 
 // ----------------------
 
@@ -153,6 +144,6 @@ console.log(getDayType(Day.Sunday));
     });
   }
 
-  squareAsync(4).then(console.log); 
-  squareAsync(-3).catch(console.error);
+  squareAsync(4) 
+  squareAsync(-3)
 }

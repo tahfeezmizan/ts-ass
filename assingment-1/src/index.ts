@@ -1,39 +1,93 @@
 function formatString(input: string, toUpper?: boolean): string {
-  return toUpper !== false ? input.toUpperCase() : input.toLowerCase();
+  const result = toUpper !== false ? input.toUpperCase() : input.toLowerCase();
+  console.log(result);
+  return result;
 }
 
-formatString("Hello");
-formatString("Hello", true);
-formatString("Hello", false);
+// formatString("Hello");
+// formatString("Hello", true);
+// formatString("Hello", false);
 
 // -------------
 
 function filterByRating(
   items: { title: string; rating: number }[]
 ): { title: string; rating: number }[] {
-  return items.filter((item) => item.rating >= 4);
+  const result = items.filter((item) => item.rating >= 4);
+
+  if (result < 4) {
+    console.log("Less than 4");
+  }
+
+  console.log(result);
+  return result;
 }
 
 const books = [
-  { title: "Book A", rating: 4.5 },
+  { title: "Book A", rating: 3.5 },
   { title: "Book B", rating: 3.2 },
   { title: "Book C", rating: 5.0 },
   { title: "Book D", rating: 4.8 },
-  { title: "Book X", rating: 3.9 },
+  { title: "Book X", rating: 4.9 },
 ];
 
-filterByRating(books);
-
+// filterByRating(books);
 
 // ---------------------------
 
 type T = string | number;
 
 function concatenateArrays(...arrays: T[][]): T[] {
-  // return arrays.reduce((acc, array) => acc.concat(array), []);
-  // arrays.forEach((array: T[]) => {console.log(array)}
+  const result = arrays.reduce((acc, array) => acc.concat(array), []);
+  console.log(result);
+  return result;
 }
 
+// concatenateArrays(["a", "b"], ["c"], ["rohim", "korim"]);
+// concatenateArrays([1, 2], [3, 4], [5]);
+// concatenateArrays([9, 8], [3, 4], [5]);
 
-concatenateArrays(["a", "b"], ["c"]); 
-concatenateArrays([1, 2], [3, 4], [5]); 
+// -----------------------
+
+{
+  class Vechicle {
+    private make: string;
+    private year: number;
+
+    constructor(make: string, year: number) {
+      this.make = make;
+      this.year = year;
+    }
+
+    getInfo() {
+      return `Make ${this.make}, Year ${this.year}`;
+    }
+  }
+
+  class Car extends Vechicle {
+    private model: string;
+
+    constructor(make: string, year: number, model: string) {
+      super(make, year);
+      this.model = model;
+    }
+    getModel() {
+      return `Model ${this.model}`;
+    }
+  }
+
+  const myCar = new Car("Toyota", 2022, "Camry");
+  // console.log(myCar.getInfo());
+  // console.log(myCar.getModel());
+}
+
+// ---------------------------
+
+function processValue(value: string | number): number {
+  const result = typeof value === "string" ? value.length : value * 2;
+  console.log(result);
+  return result;
+}
+
+// processValue("Programmgin Hero");
+// processValue(10);

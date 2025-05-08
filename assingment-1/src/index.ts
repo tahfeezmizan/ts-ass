@@ -91,3 +91,50 @@ function processValue(value: string | number): number {
 
 // processValue("Programmgin Hero");
 // processValue(10);
+
+// ---------------------
+{
+  interface Product {
+    name: string;
+    price: number;
+  }
+
+
+  function getMostExpensiveProduct(products: Product[]){
+    if (products.length === 0) return console.log(null);
+
+    const result = products.reduce((prev, curr) => curr.price > prev.price? curr : prev)
+    console.log(result);
+    return result;
+  }
+
+  const products = [
+    { name: "Pen", price: 10 },
+    { name: "Notebook", price: 25 },
+    { name: "Bag", price: 50 },
+  ];
+
+  getMostExpensiveProduct(products);
+  // Output: { name: "Bag", price: 50 }
+}
+
+
+// -------------------
+
+
+enum Day {
+  Monday,
+  Tuesday,
+  Wednesday,
+  Thursday,
+  Friday,
+  Saturday,
+  Sunday
+}
+
+function getDayType(day: Day) {
+  return day === Day.Saturday || day === Day.Sunday ? "Weekend" : "Weekday";
+}
+
+console.log(getDayType(Day.Monday));   
+console.log(getDayType(Day.Sunday));  

@@ -33,7 +33,7 @@ const x = 10;
 const y = x + 2;
 
 console.log(y); // 12
-```
+````
 
 ##  How Does TypeScript Type Inference Work?
 
@@ -70,5 +70,5 @@ Union types allow you to specify that a variable or expression can have one of a
 For example,
 ```ts
 const x: string | number;
-```
+````
 
